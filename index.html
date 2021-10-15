@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo Matter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script>
+</head>
+<body>
+
+	<div class = "command_box">
+		<div class = "logo_box">
+		<h1>LUCCA <br>CREATIVE <br>HUB</h1>
+		<h2>LOGO GENERATOR</h2>
+		</div>
+
+		<div class = "container">
+			<h3>CANVAS</h3>
+	  			<h5>Formato:  
+	  				<select name="size_canvas" id="size_canvas" onchange="canva_select()">
+		    			<option value="1x1">1 x 1</option>
+		    			<option value="3x2">3 x 2</option>
+		    			<option value="16x9">16 x 9</option>
+		    			<option value="A4">A4</option>
+		    			<option value="A5">A5</option>
+		    			<option value="Formato_libero">Formato libero</option><br>
+		  			</select>
+		  			<form id = "free_size">
+		  				<label for="width">L:</label>
+	  					<input type="text" id="wdt_form" name="wdt_form" value="1000">
+	  					<label for="heigth">A:</label>
+	  					<input type="text" id="hgt_form" name="hgt_form" value="1000"><br><br>
+		  			</form>
+		  		</h5>
+		</div>
+
+		<div class = "container">
+			<h3>FORME</h3>
+			<h5>Grandezza:
+				<select name="size_shape" id="size_shape">
+		    		<option value="small">Piccole</option>
+		    		<option value="medium">Medie</option>
+		    		<option value="big">Grandi</option>
+		  		</select>
+	  		</h5><br>
+
+	  		<h5>Colore:
+  			<form id="color_select">
+  				<label class="radio_container">
+  					<input class = "color_radio" type="radio" id="all" 	 name="color_radio" value="all" checked="checked">
+  					<span class = "checkmark" id = "radio_all"></span>
+  				</label>
+				<label class="radio_container">
+					<input class = "color_radio" type="radio" id="purple" name="color_radio" value="purple" >
+					<span class = "checkmark" id = "radio_purple"></span></label>
+				<label class="radio_container">
+					<input class = "color_radio" type="radio" id="green"  name="color_radio" value="green" >
+					<span class = "checkmark" id = "radio_green"></span></label>
+				<label class="radio_container">
+					<input class = "color_radio" type="radio" id="orange" name="color_radio" value="orange" >
+					<span class = "checkmark" id = "radio_orange"></span></label>
+				<label class="radio_container">
+					<input class = "color_radio" type="radio" id="red" 	 name="color_radio" value="red" >
+				<span class = "checkmark" id = "radio_red"></span></label>
+			</form> 
+
+  		</div>
+
+	  	<div class = "container">
+			<div><button class = "button_box"  onclick="CreateClick()">CREA CONTENITORE</button></div>
+			<div><button class = "button_down" onclick="Download()">SCARICA IMMAGINE</button></div>
+		</div>
+	</div>
+
+	<div class="container_canvas">
+	<div id="world-1"></div>
+	</div>
+
+
+
+<script type="text/javascript" src="js/matter.min.js"></script>
+<script type="text/javascript" src="js/decomp.min.js"></script>
+<script type="text/javascript" src="js/svg.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
