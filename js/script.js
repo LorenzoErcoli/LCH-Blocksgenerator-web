@@ -18,15 +18,16 @@ CreateClick()
 
 
 
-// function openNav() {
-//   document.getElementById("command_box").style.width = "250px";
-//   document.getElementsByClassName("command_box").display = "block";
-// }
+function openNav() {
+  document.getElementById("command_box").style.width = "300px";
+  // document.getElementById("command_box").style.display = "block";
+ 
+}
 
-// function closeNav() {
-//   document.getElementById("command_box").style.width = "0";
-//   document.getElementsByClassName("command_box").display = "none";
-// }
+function closeNav() {
+  document.getElementById("command_box").style.width = "0";
+  // document.getElementById("command_box").style.display = "none";
+}
 
 
 function canva_select(){
