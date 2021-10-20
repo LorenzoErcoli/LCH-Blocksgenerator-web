@@ -13,8 +13,20 @@ color_palette = {
 	white: "#ffffff"
 }
 
-
+let pixelRatio = 1
 CreateClick()
+
+
+
+// function openNav() {
+//   document.getElementById("command_box").style.width = "250px";
+//   document.getElementsByClassName("command_box").display = "block";
+// }
+
+// function closeNav() {
+//   document.getElementById("command_box").style.width = "0";
+//   document.getElementsByClassName("command_box").display = "none";
+// }
 
 
 function canva_select(){
@@ -75,33 +87,57 @@ function CreateCanva(){
 	if(size_canvas_value == "1x1"){
 		width_canvas = 800;
 		heigth_canvas = 800
+		pixelRatio_value = 1
 	}else if(size_canvas_value == "3x2"){
 		width_canvas = 1000;
 		heigth_canvas = 666;
+		pixelRatio_value = 1
 	}else if(size_canvas_value == "16x9"){
 		width_canvas = 800;
 		heigth_canvas = 450;
+		pixelRatio_value = 1
+	}else if(size_canvas_value == "cover"){
+		width_canvas = 851;
+		heigth_canvas = 315;
+		pixelRatio_value = 1
+	}else if(size_canvas_value == 'A4 orizzontale') {
+		width_canvas = 877; // *4 = 'A4'
+		heigth_canvas = 620;
+		pixelRatio_value = 4
+	}else if(size_canvas_value == 'A4 verticale') {
+		width_canvas =  620; // *4 = 'A4'
+		heigth_canvas = 877;
+		pixelRatio_value = 4
+	}else if(size_canvas_value == 'A5 orizzontale') {
+		width_canvas = 439; // *4 = 'A5'
+		heigth_canvas = 310;
+		pixelRatio_value = 4;
+	}else if(size_canvas_value == 'A5 verticale') {
+		width_canvas =  310; // *4 = 'A5'
+		heigth_canvas = 439;
+		pixelRatio_value = 4;
 	}else if(size_canvas_value == "Formato_libero"){
-		width_canvas = parseInt(document.getElementById("wdt_form").value);
-		heigth_canvas = parseInt(document.getElementById("hgt_form").value);
+		mm_width_canvas = parseInt(document.getElementById("wdt_form").value);
+		mm_heigth_canvas = parseInt(document.getElementById("hgt_form").value);
+		width_canvas = (mm_width_canvas * 3.7795275591);
+		heigth_canvas = (mm_heigth_canvas * 3.7795275591);
+		pixelRatio_value = 1;
 	}
-
 }
 
 
 function CreateClick(){
 
-var canva = document.getElementById("world-1");
-while (canva.firstChild) {
-  canva.removeChild(canva.firstChild);
+// var canva = document.getElementById("world-1");
+// while (canva.firstChild) {
+//   canva.removeChild(canva.firstChild);
+
+	color_select()
+	shape_select()
+	CreateCanva()
+	window._deleteWorldJs();
 }
 
-color_select()
-shape_select()
-CreateCanva()
-CreateBox()
-
-}
 
 function Download(){
 var world = document.getElementById("world-1");
@@ -117,6 +153,4 @@ const link = document.createElement('a')
 
 
 }
-
-
 

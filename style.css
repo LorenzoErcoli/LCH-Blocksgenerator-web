@@ -8,6 +8,7 @@
 	--purple: #9F59D9;
 	--orange: #FF9500;
 	--black: #000000;
+	--white: #ffffff;
 }
 
 
@@ -24,12 +25,14 @@ h1{
 	color: white;
 	font-size: 30px;
 	font-weight: 900;
+	margin: 0px;
 }
 
 h2{	
 	font-size: 25px;
 	color: var(--blue);
 	font-weight: 500;
+	margin: 0px;
 }
 
 h3{
@@ -53,7 +56,7 @@ input{
 	font-family: "Inter";
 	font-weight: 700;
 	font-size: 18px;
-	width: 60px;
+	width: 50px;
 	margin-right: 10px;
 }
 
@@ -78,6 +81,14 @@ button{
 
 .container{
 	margin-top: 50px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid var(--white);
+}
+
+.block_set{
+	margin-top: 20px;
+	display: block;
+  	transition: 0.3s;
 }
 
 #free_size{
@@ -86,25 +97,53 @@ button{
 	display: none;
 
 }
+.unit{
+	 margin-left:-8px;
+	 margin-right:8px;
 
-.button_box{
-	background-color: #FF434B;
 }
 
-.button_down{
-	margin-top: 30px; 
-	background-color: #7454A6;
+.button{
+	margin: 0;
+  	position: relative;
+  	top: 50%;
+  	left: 50%;
+  	-ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);
+	margin-top: 80px;
+	width: auto;
+}
+
+#create_btn{
+	background-color: var(--red);
+}
+
+#download_btn{
+	background-color: var(--purple);
 }
 	
 .command_box{
-	background-color: var(--black);
-	margin: 0px;
-	padding: 20px;
-	height: 100vh;
-
-	position: fixed;
-	z-index:999;
+	height: 100%;
+/*	width: 0;*/
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
+	overflow-x: hidden;
+  	transition: 0.5s;
+  	padding: 20px;
 }
+
+..command_box.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
 
 .color_radio{
 	width: 25px;
@@ -130,7 +169,7 @@ button{
 /*RADIO BUTTON*/
 
 #color_select{
-margin-top: 0px;}
+	margin-top: 0px;}
 
 .radio_container {
   position: relative;

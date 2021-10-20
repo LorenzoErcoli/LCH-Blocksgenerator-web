@@ -54,7 +54,7 @@ var lchEngine = function(userOptions) {
 	var defaultOptions = {
 			target: document.body,
 			width: 600,
-			height: 600
+			height: 600,
 		},
 		options = extend(defaultOptions,userOptions);
 
@@ -80,6 +80,7 @@ var lchEngine = function(userOptions) {
 		element: userOptions.target,
 		engine: engine,
 		options: {
+			pixelRatio: userOptions.pixRatio, // 4 volte la risoluzione indicata nel canvas, utile per l'A4
 			background: userOptions.background? userOptions.background : '#fff',
 			wireframes: false,
 			width: userOptions.width,
@@ -334,6 +335,8 @@ var lchEngine = function(userOptions) {
 	var startedOffsetY;
 
 	function onPress(e) {
+		console.log(world.bodies)
+
 		if(e.changedTouches) {
 			startedOffsetX = e.changedTouches[0].clientX ;
 			startedOffsetY = e.changedTouches[0].clientY;
@@ -345,7 +348,6 @@ var lchEngine = function(userOptions) {
 	}
 
 	function onRelease(e) {
-		console.log(world.bodies)
 		var offsetX;
 		var offsetY;
 		if(e.changedTouches) {
@@ -390,7 +392,7 @@ var lchEngine = function(userOptions) {
 		userOptions.target.addEventListener('touchend', function(e) {
 			onRelease(e);
 		  }, false);
-
+		jQuery(userOptions.target).off();
 		jQuery(userOptions.target).on('mousedown', onPress);
 		jQuery(userOptions.target).on("mouseup", onRelease);
 	}
@@ -470,13 +472,9 @@ var lchEngine = function(userOptions) {
 
 };
 
-
-
-
+var instance;
 function CreateBox(){
-
-	
-	lchEngine({
+	instance = lchEngine({
 		target: document.getElementById('world-1'),
 		width: width_canvas,
 		height: heigth_canvas,
@@ -484,6 +482,24 @@ function CreateBox(){
 		colors: color_value,
 		canAdd: true,
 		size_shape: inc_size_shape,
-		background: background_value
+		background: background_value,
+		pixRatio: pixelRatio_value
 	});
+
+}
+
+window._deleteWorldJs = () => {
+	
+	if(instance) { 
+
+		Matter.Render.stop(instance.render);
+		Matter.World.clear(instance.engine.world);
+		Matter.Engine.clear(instance.engine);
+		instance.render.canvas.remove()
+		instance.render.canvas = null
+		instance.render.context = null
+		instance.render.textures = {};
+	}
+
+	CreateBox();
 }
