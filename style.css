@@ -150,7 +150,11 @@ button{
 #download_btn:hover{
 	background-color: var(--dark_purple);
 }
-	
+
+#command_set{
+	transition: 0.3s;
+}
+
 .command_box{
 	height: 100%;
 	width: 300px;
@@ -280,21 +284,25 @@ button{
 
 }
 
+#icon_setting{
+	display: none;
+	fill: var(--red);
+	cursor:pointer;
+	height: 100%;
+	width:100%;
+}
+
 #setting_svg{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
     position: absolute;
 	padding: 10px;
-	fill: var(--red);
 	width: 25px;
 	z-index: 1;
-	cursor:pointer;
-
-	display: none;
 
 }
 
-#setting_svg:hover{
+#icon_setting:hover{
 	fill: var(--dark_red)
 }
