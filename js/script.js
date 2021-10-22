@@ -19,14 +19,18 @@ CreateClick()
 
 
 function openNav() {
-  document.getElementById("command_box").style.width = "300px";
-  // document.getElementById("command_box").style.display = "block";
+  document.getElementById("command_box").style.width = "300px";;
+  document.getElementById("command_set").style.display = "block";
+  document.getElementById("setting_svg").style.display = "none";
+    document.getElementById("command_box").style.borderRadius = "0 0px 0px 0"
  
 }
 
 function closeNav() {
-  document.getElementById("command_box").style.width = "0";
-  // document.getElementById("command_box").style.display = "none";
+  document.getElementById("command_box").style.width = "50px";
+  document.getElementById("command_box").style.borderRadius = "0 40px 40px 0"
+  document.getElementById("command_set").style.display = "none";
+  document.getElementById("setting_svg").style.display = "block";
 }
 
 

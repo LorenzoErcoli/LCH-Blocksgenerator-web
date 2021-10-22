@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
 
 :root {
-    --red: #F54049;
+
+	--black: #000000;
+	--white: #ffffff;
+	--red: #F54049;
+	--dark_red: #360003;
 	--green: #92C325;
+	--dark_green: #394D10;
 	--blue: #1D8DDD;
 	--dark_blue: #0D1829;
 	--purple: #9F59D9;
+	--dark_purple : #49004D;
 	--orange: #FF9500;
+	--dark_orange: #593A00;
 	--black: #000000;
-	--white: #ffffff;
 }
 
 
@@ -78,12 +84,19 @@ button{
 	border: none;
 }
 
-.openpannel{
+.img_logo{
+	width: 180px;
+	padding: 20px 0;
+}
+
+.logo_background{
 	position: absolute;
-	z-index: 1;
-	margin: 20px;
-	cursor:pointer;
-	color: var(--white)
+	top: 60%;
+	right: 5%;
+}
+
+#img_vertical_log{
+	width: 100px;
 }
 
 .container{
@@ -126,8 +139,16 @@ button{
 	background-color: var(--red);
 }
 
+#create_btn:hover {
+	background-color: var(--dark_red);
+}
+
 #download_btn{
 	background-color: var(--purple);
+}
+
+#download_btn:hover{
+	background-color: var(--dark_purple);
 }
 	
 .command_box{
@@ -257,4 +278,23 @@ button{
     color: var(--blue);
 	border: solid;
 
+}
+
+#setting_svg{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    position: absolute;
+	padding: 10px;
+	fill: var(--red);
+	width: 25px;
+	z-index: 1;
+	cursor:pointer;
+
+	display: none;
+
+}
+
+#setting_svg:hover{
+	fill: var(--dark_red)
 }
